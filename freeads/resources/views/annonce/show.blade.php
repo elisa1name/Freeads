@@ -17,10 +17,10 @@
     </ul>
 </nav>
 
-<h1>Show {{ $annonce }}</h1>
-
+<h1>Show</h1>
+<h3>Ma dernière annonce ajouter</h3>
     <div class="jumbotron text-center">
-        <h2>{{ $annonce }}</h2>
+        <h2>{{ $annonces[0]->titre }} {{ $annonces[0]->description }} {{ $annonces[0]->prix}} euros</h2>
        
     </div>
 

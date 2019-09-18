@@ -6,6 +6,7 @@ use App\Annonce;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use View;
+use Auth;
 
 class AnnonceController extends Controller
 {
@@ -16,7 +17,8 @@ class AnnonceController extends Controller
      */
     public function index()
     {
-        return view('annonce.index');
+        $annonces = Annonce::all();
+        return view('annonce.index', compact('annonces'));
     }
 
     /**
@@ -44,8 +46,7 @@ class AnnonceController extends Controller
         $annonce->description = Input::get('description');
         // $annonce->photo = Input::get('photo');
         $annonce->prix = Input::get('prix');
-        var_dump($annonce);
-        // $annonce->users_id = User::user()->id;
+        $annonce->users_id = Auth::user()->id;
         $annonce->save();
        
     }
@@ -59,9 +60,12 @@ class AnnonceController extends Controller
    
     public function show($id)
     {
-        $annonce = Annonce::find($id);
-        return View::make('annonce.show')
-            ->with('annonce', $annonce);
+        var_dump($id);
+        $annonces = Annonce::where('users_id', $id)->get();
+
+        // $annonce = Annonce::find($id);
+         return view('annonce.show', compact('annonces'));
+       
     }
 
 
@@ -71,9 +75,10 @@ class AnnonceController extends Controller
      * @param  \App\Annonce  $annonce
      * @return \Illuminate\Http\Response
      */
-    public function edit(Annonce $annonce)
+    public function edit($id)
     {
-        return view('annonce.edit');
+        $annonce = Annonce::find($id);
+        return view('annonce.edit', compact('annonce'));     
     }
 
     /**
@@ -83,9 +88,17 @@ class AnnonceController extends Controller
      * @param  \App\Annonce  $annonce
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Annonce $annonce)
+    public function update(Request $request, $id)
     {
-        //
+        $annonce = Annonce::find($id);
+        $annonce->titre =  $request->get('titre');
+        $annonce->description = $request->get('description');
+        $annonce->prix = $request->get('prix');
+        // $annonce->photo = $request->get('photo');
+        
+        $annonce->save();
+
+        return redirect('/annonce')->with('success', 'annonce modifer!');
     }
 
     /**
@@ -94,8 +107,11 @@ class AnnonceController extends Controller
      * @param  \App\Annonce  $annonce
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Annonce $annonce)
+    public function destroy($id)
     {
-        //
+        $annonce = Annonce::find($id);
+        $annonce->delete();
+
+        return redirect('/annonce')->with('success', 'Annonce supprimés!');
     }
 }

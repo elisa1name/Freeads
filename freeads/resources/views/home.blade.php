@@ -15,7 +15,7 @@
                     @endif
 
                     Vous êtes bien connecté !
-                    <li><a href="{{ URL::to('annonce/show') }}">Voir les annonces</a></li>
+                    <li><a href="{{ URL::to('annonce/show/'.Auth::id()) }}">Voir les annonces</a></li>
                     <li><a href="{{ URL::to('annonce/create') }}">Crée une annonce</a>
                 </div>
             </div>
