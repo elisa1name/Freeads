@@ -5,12 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-                <form  method="get">
+            <a href="{{ URL::to('/home') }}">Home</a>
+            <a href="{{ URL::to('annonce/show') }}">Retour</a>
+                <div class="card-header">Toutes les annonces</div>
+                <!-- <form  method="get">
                      <input type="submit" value="Go to my link location" 
                          name="Submit" id="frm1_submit" onclick="window.location='view/annonce/create';" />
-                         <p>Aucune annonce trouvé</p>
-                </form>   
+                </form>  -->
             </div>
         </div>
     </div>

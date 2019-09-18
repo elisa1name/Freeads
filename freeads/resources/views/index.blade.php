@@ -1,11 +1,13 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>freeads</title>
-        <body>
-            <h1>WELCOME</h1>
-        </body>
-        </html>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Bienvenue sur mon site freeads</div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -1,4 +1,3 @@
-
 @extends('layouts.layout')
 
 @section('content')
@@ -9,7 +8,8 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Annonce
+  <a href="{{ URL::to('annonce/show') }}">Retour</a><br>
+    Ajoutez une annonce
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -29,17 +29,17 @@
           </div>
           <div class="form-group">
               <label for="price">description:</label>
-              <input type="text" class="form-control" name="deescription"/>
+              <input type="text" class="form-control" name="description"/>
           </div>
           <div class="form-group">
               <label for="quantity">photo:</label>
-              <input type="text" class="form-control" name="photo"/>
+              <input type="file" class="form-control" name="photo"/>
           </div>
           <div class="form-group">
               <label for="quantity">prix:</label>
               <input type="text" class="form-control" name="prix"/>
           </div>
-          <button type="submit" class="btn btn-primary">Create Book</button>
+          <input type="submit" class="btn btn-primary">
       </form>
   </div>
 </div>

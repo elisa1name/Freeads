@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Menu</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Vous êtes bien connecté !
+                    <li><a href="{{ URL::to('annonce/show') }}">Voir les annonces</a></li>
+                    <li><a href="{{ URL::to('annonce/create') }}">Crée une annonce</a>
                 </div>
             </div>
         </div>
