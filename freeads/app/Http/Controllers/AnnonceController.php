@@ -60,12 +60,8 @@ class AnnonceController extends Controller
    
     public function show($id)
     {
-        var_dump($id);
         $annonces = Annonce::where('users_id', $id)->get();
-
-        // $annonce = Annonce::find($id);
          return view('annonce.show', compact('annonces'));
-       
     }
 
 

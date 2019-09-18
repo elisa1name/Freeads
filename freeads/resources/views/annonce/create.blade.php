@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-  <a href="{{ URL::to('annonce/show') }}">Retour</a><br>
+  <a href="{{ URL::to('/home') }}">Home</a><br>
     Ajoutez une annonce
   </div>
   <div class="card-body">
