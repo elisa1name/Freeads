@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\User;
+use App\Auth;
+use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class ConversationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('conversation.index');
     }
 
     /**
@@ -24,8 +24,9 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('conversation.index');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -46,8 +47,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('users', $id)->get();
-        return view('profile.show', compact('users'));
+        //
     }
 
     /**
@@ -57,9 +57,8 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {    
-        $user = User::find($id);
-        return view('profiles.edit', compact ('users'));
+    {
+        //
     }
 
     /**
@@ -71,13 +70,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name =  $request->get('name');
-        $user->email = $request->get('email');
-        $user->password = $request->get('password');
-        $user->save();
-
-        return redirect('/home')->with('success', 'profil modifer!');
+        //
     }
 
     /**
@@ -88,9 +81,6 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        // return response ()->json ();
-         return redirect('/register')->with('success', 'profil supprimé!');
+        //
     }
 }

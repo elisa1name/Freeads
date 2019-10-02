@@ -18,7 +18,7 @@
 </nav>
 
 <h1>Show</h1>
-<h3>Ma dernière annonce ajouter</h3>
+<h3>Une annonce</h3>
     <div class="jumbotron text-center">
         <h2>{{ $annonces[0]->titre }} {{ $annonces[0]->description }} {{ $annonces[0]->prix}} euros</h2>
        

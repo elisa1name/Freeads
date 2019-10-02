@@ -20,7 +20,9 @@ Route::resource('annonce', 'AnnonceController');
 Route::get('annonce/show/{id}', 'AnnonceController@show');
 Route::middleware ('auth', 'verified')->group (function () {
     Route::resource ('profile', 'ProfileController', [
-        'only' => ['edit', 'update', 'destroy', 'show'],
+        'except' => ['create'],
         'parameters' => ['profile' => 'user']
     ]);
 });
+Route::get('conversation', 'ConversationController@index')->name('conversation');
+// Route::get('conversation/{id}', 'ConversationController@show')->name('conversation.show');

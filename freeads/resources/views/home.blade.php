@@ -15,11 +15,10 @@
                     @endif
 
                     Vous êtes bien connecté !<br>
-       <a href="{{ URL::to('profile/edit', auth()->id()) }}">Editer mon profil</a><br>
-        <a href="{{ URL::to('profile/show', auth()->id()) }}">Show</a><br>
-        <a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a>
+                <a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a>
                     <li><a href="{{ URL::to('annonce/show/'.Auth::id()) }}">Voir les annonces</a></li>
                     <li><a href="{{ URL::to('annonce/create') }}">Crée une annonce</a>
+                    <li><a href="{{ URL::to('conversation/index') }}">Conversation</a>
                 </div>
             </div>
         </div>

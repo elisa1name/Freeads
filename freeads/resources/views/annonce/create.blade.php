@@ -9,7 +9,7 @@
 <div class="card uper">
   <div class="card-header">
   <a href="{{ URL::to('/home') }}">Home</a><br>
-    Ajoutez une annonce
+    Ajoutez une annonces
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -31,10 +31,10 @@
               <label for="price">description:</label>
               <input type="text" class="form-control" name="description"/>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
               <label for="quantity">photo:</label>
               <input type="file" class="form-control" name="photo"/>
-          </div>
+          </div> -->
           <div class="form-group">
               <label for="quantity">prix:</label>
               <input type="text" class="form-control" name="prix"/>
